@@ -30,9 +30,36 @@ public class BirthDetailsFromID {
         return date;
     }
 
-    public int getMonth() {
+    public String getMonth() {
         int month = list[2] * 10 + list[3];
-        return month;
+        switch (month) {
+            case 1:
+            return "January";
+            case 2:
+                return "February";
+            case 3:
+                return "March";
+            case 4:
+                return "April";
+            case 5:
+                return "May";
+            case 6:
+                return "June";
+            case 7:
+                return "July";
+            case 8:
+                return "August";
+            case 9:
+                return "September";
+            case 10:
+                return "October";
+            case 11:
+                return "November";
+            case 12:
+                return "December";
+            default:
+                return "Invalid month";
+        }
     }
 
     public String getYear() {
@@ -50,7 +77,7 @@ public class BirthDetailsFromID {
             return false;
         } else if (getDate() > 31 || getDate() < 1) {
             return false;
-        } else if (getMonth() > 12 || getMonth() < 1) {
+        } else if (getMonth().equals("Invalid month")) {
             return false;
         }
         return true;

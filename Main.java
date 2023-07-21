@@ -11,7 +11,7 @@ public class Main {
             BirthDetailsFromID details = new BirthDetailsFromID(id);
             int[] list = details.getDetails();
             int date = details.getDate();
-            Month month = Month.of(details.getMonth());
+            String month = details.getMonth();
             String year = details.getYear();
 
             // Check if ID is 13 digits long
