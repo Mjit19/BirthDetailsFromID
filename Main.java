@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.time.Month;
 
 public class Main {
     public static void main(String[] args) {
@@ -7,21 +8,20 @@ public class Main {
             // Asking for user input
             System.out.print("Enter your ID: ");
             String id = scanner.nextLine();
+            BirthDetailsFromID details = new BirthDetailsFromID(id);
+            int[] list = details.getDetails();
+            int date = details.getDate();
+            Month month = Month.of(details.getMonth());
+            String year = details.getYear();
 
             // Check if ID is 13 digits long
-            if (id.length() != 13) {
+            if (!details.checkId()) {
                 System.out.println("Invalid ID");
                 continue;
-            } else {
-                BirthDetailsFromID details = new BirthDetailsFromID(id);
-                int[] list = details.getDetails();
-                for (int i: list) {
-                    System.out.print(i);
-                }
+            } else {                
+                System.out.println("Born on: " + date + " " + month + ", " + year);
                 break;
             }
-
-            
         }
         
         
