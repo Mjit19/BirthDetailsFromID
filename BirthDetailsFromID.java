@@ -1,24 +1,28 @@
-import java.util.Scanner;
+import java.util.Arrays;
 
 public class BirthDetailsFromID {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+    private String id;
 
-        while (true) {
-            // Asking for user input
-            System.out.print("Enter your ID: ");
-            String id = scanner.nextLine();
-
-            // Check if ID is 13 digits long
-            if (id.length() != 13) {
-                System.out.println("Invalid ID");
-                continue;
-            } else {
-                break;
-            }
-        }
-        
-        
-        scanner.close();
+    public BirthDetailsFromID(String id) {
+        this.id = id;
     }
+
+    public int[] getDetails() {
+        int[] list = new int[6];
+        for (int i = 0; i < 6; i++) {
+            list[i] = Character.getNumericValue(this.id.charAt(i));
+        }
+        return list;
+    }
+
+    /* public boolean checkId() {
+        // if (this.id != 13 || this.id);
+        
+    }
+
+    public int getDate() {
+        for (int i = 0; i < 2; i++) {
+            // System.out.print(id[i]);
+        }
+    } */
 }
