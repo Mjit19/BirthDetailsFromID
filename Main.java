@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.time.Month;
 
 public class Main {
     public static void main(String[] args) {
@@ -9,7 +8,7 @@ public class Main {
             System.out.print("Enter your ID: ");
             String id = scanner.nextLine();
             BirthDetailsFromID details = new BirthDetailsFromID(id);
-            int[] list = details.getDetails();
+            details.getDetails();
             int date = details.getDate();
             String month = details.getMonth();
             String year = details.getYear();
